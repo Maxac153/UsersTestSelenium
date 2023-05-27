@@ -1,0 +1,654 @@
+{
+	"info": {
+		"_postman_id": "b45d84f7-89f9-4436-89ab-e5496092a272",
+		"name": "Users",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19250021",
+		"_collection_link": "https://www.postman.com/flight-candidate-26167883/workspace/postman/collection/19250021-b45d84f7-89f9-4436-89ab-e5496092a272?action=share&creator=19250021&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "Do Register",
+			"item": [
+				{
+					"name": "User Registration With Correct Data Entry",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", () => {",
+									"\tpm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Response time is less than 500ms\", () => {",
+									"    pm.expect(pm.response.responseTime).to.be.below(500);",
+									"});",
+									"",
+									"pm.test(\"The response has all properties\", () => {",
+									"    const responseJson = pm.response.json();",
+									"    pm.expect(responseJson.name).to.eql('Tur123');",
+									"    pm.expect(responseJson.avatar).to.eql('http://users.bugred.ru//tmp/default_avatar.jpg');",
+									"    pm.expect(responseJson.birthday).to.eql(0);",
+									"    pm.expect(responseJson.email).to.eql('verygood@mail.ru');",
+									"    pm.expect(responseJson.gender).to.eql('');",
+									"    pm.expect(responseJson.date_start).to.eql(0);",
+									"    pm.expect(responseJson.hobby).to.eql('');",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"{{email}}\",\n    \"name\": \"{{user_name}}\",\n    \"password\": \"{{password}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{site}}doregister",
+							"host": [
+								"{{site}}doregister"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Registration Skipping The At Symbol In Email",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Response time is less than 400ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(400);",
+									"});",
+									"",
+									"pm.test(\"Checking JSON response\", () => {",
+									"    const responseJson = pm.response.json();",
+									"    pm.expect(responseJson.type).to.eql('error');",
+									"    pm.expect(responseJson.message).to.eql(' Некоректный  email verygoodmail.ru');",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"verygoodmail.ru\",\n    \"name\": \"{{user_name}}\",\n    \"password\": \"{{password}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{site}}doregister",
+							"host": [
+								"{{site}}doregister"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Registration Skipping The Point Symbol In Email",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Response time is less than 400ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(400);",
+									"});",
+									"",
+									"pm.test(\"Checking JSON response\", () => {",
+									"    const responseJson = pm.response.json();",
+									"    pm.expect(responseJson.type).to.eql('error');",
+									"    pm.expect(responseJson.message).to.eql(' Некоректный  email verygood@mailru');",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"verygood@mailru\",\n    \"name\": \"{{user_name}}\",\n    \"password\": \"{{password}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{site}}doregister",
+							"host": [
+								"{{site}}doregister"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Registration Skipping Name",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Response time is less than 400ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(400);",
+									"});",
+									"",
+									"pm.test(\"Checking JSON response\", () => {",
+									"    const responseJson = pm.response.json();",
+									"    pm.expect(responseJson.type).to.eql('error');",
+									"    pm.expect(responseJson.message).to.eql('поле фио является обязательным');",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"{{email}}\",\n    \"name\": \"\",\n    \"password\": \"{{password}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{site}}doregister",
+							"host": [
+								"{{site}}doregister"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Registration Skipping Password",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Response time is less than 400ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(400);",
+									"});",
+									"",
+									"pm.test(\"Checking JSON response\", () => {",
+									"    const responseJson = pm.response.json();",
+									"    pm.expect(responseJson.type).to.eql('error');",
+									"    pm.expect(responseJson.message).to.eql('поле пароль является обязательным');",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"{{email}}\",\n    \"name\": \"{{user_name}}\",\n    \"password\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{site}}doregister",
+							"host": [
+								"{{site}}doregister"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Create Company",
+			"item": [
+				{
+					"name": "Create Company",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Response time is less than 400ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(400);",
+									"});",
+									"",
+									"pm.test(\"Checking JSON response\", () => {",
+									"    const responseJson = pm.response.json();",
+									"    pm.expect(responseJson.company[0].name).to.eql(\"KJSkdfjlsdjf\");",
+									"    pm.expect(responseJson.company[0].type).to.eql(\"ОАО\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "company_name",
+									"value": "KJSkdfjlsdjf",
+									"type": "text"
+								},
+								{
+									"key": "company_type",
+									"value": "ОАО",
+									"type": "text"
+								},
+								{
+									"key": "company_users[0]",
+									"value": "verygood@mail.ru",
+									"type": "text"
+								},
+								{
+									"key": "email_owner",
+									"value": "verygood@mail.ru",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{site}}createcompany",
+							"host": [
+								"{{site}}createcompany"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Create User",
+			"item": [
+				{
+					"name": "Create User",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Response time is less than 400ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(400);",
+									"});",
+									"",
+									"pm.test(\"Checking JSON response\", () => {",
+									"    const responseJson = pm.response.json();",
+									"    pm.expect(responseJson.email).to.eql(\"fskdje@gmail.com\");",
+									"    pm.expect(responseJson.name).to.eql(\"serwdg\");",
+									"    pm.expect(responseJson.companies[0].name).to.eql(\"Ромашка\");",
+									"    pm.expect(responseJson.companies[0].id).to.eql(39);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "fskdje@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "serwdg",
+									"type": "text"
+								},
+								{
+									"key": "tasks[0]",
+									"value": "56",
+									"type": "text"
+								},
+								{
+									"key": "companies[0]",
+									"value": "39",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{site}}createuser",
+							"host": [
+								"{{site}}createuser"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Create User With Tasks",
+			"item": [
+				{
+					"name": "Create User With Tasks",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Response time is less than 400ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(400);",
+									"});",
+									"",
+									"pm.test(\"Checking JSON response\", () => {",
+									"    const responseJson = pm.response.json();",
+									"    pm.expect(responseJson.name).to.eql(\"serg\");",
+									"    pm.expect(responseJson.role[0]).to.eql(\"user\");",
+									"    pm.expect(responseJson.tasks[0].name).to.eql(\"Задача №2\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n \"email\": \"fsje@gmail.com\",\n \"name\": \"serg\",\n \"tasks\": [{\n   \"title\": \"Задача №2\",\n   \"description\": \"Что-то сделать\"\n }]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{site}}createuserwithtasks",
+							"host": [
+								"{{site}}createuserwithtasks"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Add Avatar",
+			"item": [
+				{
+					"name": "Add Avatar",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", () => {",
+									"\tpm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Response time is less than 500ms\", () => {",
+									"    pm.expect(pm.response.responseTime).to.be.below(500);",
+									"});",
+									"",
+									"pm.test(\"The response has all properties\", () => {",
+									"    const responseJson = pm.response.json();",
+									"    pm.expect(responseJson.status).to.eql('ok');",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "avatar",
+									"type": "file",
+									"src": "/home/turgor/Рабочий стол/dvZ98XJqGe4.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{site}}addavatar?email={{email}}",
+							"host": [
+								"{{site}}addavatar"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "{{email}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Avatart test size",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", () => {",
+									"\tpm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Response time is less than 500ms\", () => {",
+									"    pm.expect(pm.response.responseTime).to.be.below(600);",
+									"});",
+									"",
+									"pm.test(\"The response has all properties\", () => {",
+									"    const responseJson = pm.response.json();",
+									"    pm.expect(responseJson.error).to.eql('maximum file size 150kb');",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "avatar",
+									"type": "file",
+									"src": "/home/turgor/Рабочий стол/lQf_kmfqDXU.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{site}}addavatar?email={{email}}",
+							"host": [
+								"{{site}}addavatar"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "{{email}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Delete Avatar",
+			"item": [
+				{
+					"name": "Delete Avatar",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", () => {",
+									"\tpm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Response time is less than 500ms\", () => {",
+									"    pm.expect(pm.response.responseTime).to.be.below(500);",
+									"});",
+									"",
+									"pm.test(\"The response has all properties\", () => {",
+									"    const responseJson = pm.response.json();",
+									"    pm.expect(responseJson.status).to.eql('ok');",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{site}}deleteavatar/?email={{email}}",
+							"host": [
+								"{{site}}deleteavatar"
+							],
+							"path": [
+								""
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "{{email}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Magic Search",
+			"item": [
+				{
+					"name": "Magic Search",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 231\", function () {",
+									"    pm.response.to.have.status(231);",
+									"});",
+									"",
+									"pm.test(\"Response time is less than 400ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(400);",
+									"});",
+									"",
+									"pm.test(\"Checking JSON response\", () => {",
+									"    const responseJson = pm.response.json();",
+									"    pm.expect(responseJson.foundCount).to.eql(1);",
+									"    pm.expect(responseJson.results[0].name).to.eql(\"Tur123\");",
+									"    pm.expect(responseJson.results[0].email).to.eql(\"verygood@mail.ru\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{site}}magicsearch?query=Tur123",
+							"host": [
+								"{{site}}magicsearch"
+							],
+							"query": [
+								{
+									"key": "query",
+									"value": "Tur123"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

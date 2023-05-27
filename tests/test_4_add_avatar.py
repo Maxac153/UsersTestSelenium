@@ -23,4 +23,5 @@ def test_user_add_avatar_more_150Kb(driver):
     from_page.open()
     result = from_page.authorization(email, password, img)
 
-    assert 'http://users.bugred.ru/tmp/default_avatar.jpg' == result
+    assert 'http://users.bugred.ru/tmp/default_avatar.jpg' == result, \
+        "Некорректный размер картинки (файл привышает лимит по размеру > 150Kb)!"
