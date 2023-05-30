@@ -8,4 +8,5 @@ class AuthorizationPage(BasePage):
         self.element_is_visible(UserAuthorizationLocators.INPUT_PASSWORD).send_keys(password)
         self.element_is_visible(UserAuthorizationLocators.BUTTON_AUTHORIZATION).click()
         time.sleep(3)
-
+        result = self.element_is_visible(UserAuthorizationLocators.USER_LOGIN).text
+        return result
