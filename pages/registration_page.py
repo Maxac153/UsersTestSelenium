@@ -8,7 +8,6 @@ class RegistrationPage(BasePage):
         self.element_is_visible(UserRegistrationLocators.INPUT_EMAIL).send_keys(email)
         self.element_is_visible(UserRegistrationLocators.INPUT_PASSWORD).send_keys(password)
         self.element_is_visible(UserRegistrationLocators.BUTTON_REGISTRATION).click()
-        time.sleep(3)
 
     def user_authorization(self):
         return self.element_is_visible(UserRegistrationLocators.USER_LOGIN).text

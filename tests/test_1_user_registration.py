@@ -2,7 +2,7 @@ import pytest
 from pages.registration_page import RegistrationPage
 
 @pytest.mark.run(order=1)
-def test_user_registration(driver):
+def test_user_registration(logout, driver):
     first_name = 'tur123'
     email = 'verygood@mail.ru'
     password = '123'
@@ -16,7 +16,7 @@ def test_user_registration(driver):
     assert expected_result == result
 
 @pytest.mark.run(order=2)
-def test_user_registration_already_database(driver):
+def test_user_registration_already_database(delete_user, driver):
     first_name = 'tur123'
     email = 'verygood@mail.ru'
     password = '123'

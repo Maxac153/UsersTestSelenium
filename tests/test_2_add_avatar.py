@@ -3,8 +3,8 @@ from pages.profile_page import ProfilePage
 
 @pytest.mark.run(order=1)
 def test_user_add_avatar_less_150Kb(driver):
-    email = 'verygood@mail.ru'
-    password = '123'
+    email = 'manager@mail.ru'
+    password = '1'
     img = "/home/turgor/PycharmProjects/UsersTestSelemium/img/img_8Kb.png"
 
     from_page = ProfilePage(driver, 'http://users.bugred.ru/user/login/index.html')
@@ -15,8 +15,8 @@ def test_user_add_avatar_less_150Kb(driver):
 
 @pytest.mark.run(order=2)
 def test_user_add_avatar_more_150Kb(driver):
-    email = 'verygood@mail.ru'
-    password = '123'
+    email = 'manager@mail.ru'
+    password = '1'
     img = "/home/turgor/PycharmProjects/UsersTestSelemium/img/img_more_150Kb.jpg"
 
     from_page = ProfilePage(driver, 'http://users.bugred.ru/user/login/index.html')
