@@ -1,7 +1,6 @@
 import pytest
 from pages.profile_page import ProfilePage
 
-@pytest.mark.run(order=1)
 def test_user_add_avatar_less_150Kb(driver):
     email = 'manager@mail.ru'
     password = '1'
@@ -13,7 +12,6 @@ def test_user_add_avatar_less_150Kb(driver):
 
     assert not 'http://users.bugred.ru/tmp/default_avatar.jpg' == result
 
-@pytest.mark.run(order=2)
 def test_user_add_avatar_more_150Kb(driver):
     email = 'manager@mail.ru'
     password = '1'

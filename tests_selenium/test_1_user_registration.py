@@ -1,7 +1,6 @@
 import pytest
 from pages.registration_page import RegistrationPage
 
-@pytest.mark.run(order=1)
 def test_user_registration(logout, driver):
     first_name = 'tur123'
     email = 'verygood@mail.ru'
@@ -15,7 +14,6 @@ def test_user_registration(logout, driver):
     expected_result = first_name
     assert expected_result == result
 
-@pytest.mark.run(order=2)
 def test_user_registration_already_database(delete_user, driver):
     first_name = 'tur123'
     email = 'verygood@mail.ru'
@@ -28,7 +26,6 @@ def test_user_registration_already_database(delete_user, driver):
     expected_result = 'Занят (name)'
     assert expected_result == result
 
-@pytest.mark.run(order=3)
 def test_user_registration_skipping_the_at_symbol_in_email(driver):
     first_name = 'tur123'
     email = 'verygoodmail.ru'
@@ -41,7 +38,6 @@ def test_user_registration_skipping_the_at_symbol_in_email(driver):
     expected_result = 'Неправильное значение поля (email)'
     assert expected_result == result
 
-@pytest.mark.run(order=4)
 def test_user_registration_skipping_the_point_symbol_in_email(driver):
     first_name = 'tur123'
     email = 'verygood@mailru'
@@ -55,7 +51,6 @@ def test_user_registration_skipping_the_point_symbol_in_email(driver):
 
     assert expected_result == result
 
-@pytest.mark.run(order=5)
 def test_user_registration_skipping_the_first_name(driver):
     first_name = ''
     email = 'verygood@mail.ru'
@@ -70,7 +65,6 @@ def test_user_registration_skipping_the_first_name(driver):
 
     assert expected_result == result
 
-@pytest.mark.run(order=6)
 def test_user_registration_skipping_the_email(driver):
     first_name = 'tur123'
     email = ''
@@ -85,7 +79,6 @@ def test_user_registration_skipping_the_email(driver):
 
     assert expected_result == result
 
-@pytest.mark.run(order=7)
 def test_user_registration_skipping_the_password(driver):
     first_name = 'tur123'
     email = 'verygood@mail.ru'
