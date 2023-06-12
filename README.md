@@ -10,19 +10,27 @@
 - Python 3.10.9
 - Selenium
 - PyTest
+- request
 - Postman
 
 ## Состав проекта
 
-- Файлы (tests) с Python тестами 
+- Файлы (tests_selenium) с Python тестами
+- Файлы (tests_api_python) с Python API тестами
 - Файлы (test_api_postman) с API тестами 
 - Файлы (test_case) с тест кейсами к API тестам 
 
 ## Selenium тесты
 
-Пример запуска тестов в Selenium:
+Пример запуска Selenium тестов:
 
 <img src="img/TestsSelenium.png" width="700" height="400">
+
+## Python API тесты
+
+Пример запуска API тестов:
+
+<img src="img/TestsPythonAPI.png" width="700" height="400">
 
 ## Postman
 

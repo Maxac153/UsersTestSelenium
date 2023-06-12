@@ -1,6 +1,6 @@
 import requests
 
-def test_magic_search():
+def test_magic_search(delete_user):
     url = "http://users.bugred.ru/tasks/rest/magicsearch?query=Tur123"
 
     response = requests.get(url)
