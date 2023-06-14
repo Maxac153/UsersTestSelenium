@@ -1,6 +1,5 @@
 from pages.base_page import BasePage
 from locators.user_delete_locators import UserDeleteLocators
-import time
 
 class DeletePage(BasePage):
     def delete_user(self, email, password, user_name_delete):
