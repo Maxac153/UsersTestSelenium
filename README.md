@@ -18,7 +18,8 @@
 - Файлы (tests_selenium) с Python тестами
 - Файлы (tests_api_python) с Python API тестами
 - Файлы (test_api_postman) с API тестами 
-- Файлы (test_case) с тест кейсами к API тестам 
+- Файлы (test_case) с тест кейсами к API тестам (Selenium)
+- Файлы (test_list) с тест листами к API тестам (Selenium)
 
 ## Selenium тесты
 
@@ -44,8 +45,15 @@
 
 <img src="img/TestsCaseUsersAPI.png" width="700" height="400">
 
+## Test List
+
+Пример тест листов для API запросов Postman:
+
+<img src="img/TestsListUsersAPI.png" width="700" height="400">
+
 ## Будущие изменения
 
 - [X] Сделать фикстуру удаления пользователя
 - [X] Сделать фикстуру выхода пользователя из аккаунат
-- [X] Добавить API python тесты 
+- [X] Добавить API python тесты
+- [X] Добавить API test list
