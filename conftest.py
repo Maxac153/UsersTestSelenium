@@ -24,11 +24,6 @@ def delete_user(driver):
     from_page.open()
     from_page.delete_user(email, password, user_name_delete)
 
-    from_page = LogoutPage(driver, 'http://users.bugred.ru/')
-    from_page.open()
-    from_page.logout()
-
-
 @pytest.fixture()
 def logout(driver):
     yield
