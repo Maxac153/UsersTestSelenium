@@ -20,6 +20,7 @@
 - Файлы (test_api_postman) с API тестами 
 - Файлы (test_case) с тест кейсами к API тестам (Selenium)
 - Файлы (test_list) с тест листами к API тестам (Selenium)
+- Отчеты (report)
 
 ## Selenium тесты
 
@@ -39,6 +40,10 @@
 
 <img src="img/TestsPostmanAPI.png" width="700" height="400">
 
+## Report Postman
+
+<img src="img/PostmanReport.png" width="700" height="400">
+
 ## Test Case
 
 Пример тест кейсов для API запросов Postman:
@@ -57,3 +62,4 @@
 - [X] Сделать фикстуру выхода пользователя из аккаунат
 - [X] Добавить API python тесты
 - [X] Добавить API test list
+- [X] Добавить Report
