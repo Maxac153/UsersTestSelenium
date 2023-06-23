@@ -10,6 +10,7 @@
 - Python 3.10.9
 - Selenium
 - PyTest
+- PyTest-html
 - request
 - Postman
 
@@ -33,6 +34,10 @@
 Пример запуска API тестов:
 
 <img src="img/TestsPythonAPI.png" width="700" height="400">
+
+## Report Selenium
+
+<img src="img/SeleniumReport.png" width="700" height="400">
 
 ## Postman
 
@@ -62,4 +67,4 @@
 - [X] Сделать фикстуру выхода пользователя из аккаунат
 - [X] Добавить API python тесты
 - [X] Добавить API test list
-- [X] Добавить Report
+- [X] Добавить Reports

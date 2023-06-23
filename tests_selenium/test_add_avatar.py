@@ -14,6 +14,7 @@ class TestAddAvatar:
          '/home/turgor/PycharmProjects/UsersTestSelenium/img/img_8Kb.png',
          'http://users.bugred.ru/tmp/default_avatar.jpg')
     ]
+
     def __profile_page(slef, driver, email, password, img):
         from_page = ProfilePage(driver, 'http://users.bugred.ru/user/login/index.html')
         from_page.open()
