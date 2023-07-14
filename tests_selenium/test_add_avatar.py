@@ -25,4 +25,4 @@ class TestAddAvatar:
     def test_user_add_avatar(self, driver, test_data):
         email, password, img, expected_result = test_data
         result = self.__profile_page(driver, email, password, img)
-        assert not expected_result == result
+        assert not expected_result == result, 'Ошибка добавления аватарки'

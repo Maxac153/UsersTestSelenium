@@ -44,4 +44,4 @@ class TestUserRegistration:
             self.__delete_user(driver)
             self.__logout(driver)
 
-        assert expected_result == result
+        assert expected_result == result, 'Ошибка при регистрации пользователя'
