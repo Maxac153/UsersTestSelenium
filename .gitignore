@@ -1,2 +1,3 @@
 /venv
 /.idea
+/tests_selenium/geckodriver.log

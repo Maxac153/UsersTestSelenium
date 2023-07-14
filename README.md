@@ -68,3 +68,4 @@
 - [X] Добавить API python тесты
 - [X] Добавить API test list
 - [X] Добавить Reports
+- [ ] Добавить Allure отчёты

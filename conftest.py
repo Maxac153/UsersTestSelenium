@@ -3,13 +3,13 @@ from selenium import webdriver
 
 from pages.delete_page import DeletePage
 from pages.logout_page import LogoutPage
+from selenium.webdriver.firefox.options import Options
+
 
 @pytest.fixture(scope='session', autouse=True)
 def driver():
-    chrome_options = webdriver.ChromeOptions()
-    chrome_options.add_argument("--no-sandbox")
-    chrome_options.add_argument("--start-maximized")
-    browser = webdriver.Chrome(options=chrome_options)
+    browser = webdriver.Firefox()
+    browser.maximize_window()
     yield browser
     browser.quit()
 

@@ -7,12 +7,12 @@ class TestAddAvatar:
         ('manager@mail.ru',
          '1',
          '/home/turgor/PycharmProjects/UsersTestSelenium/img/img_8Kb.png',
-         'http://users.bugred.ru/tmp/default_avatar.jpg'),
+         True),
 
         ('manager@mail.ru',
          '1',
-         '/home/turgor/PycharmProjects/UsersTestSelenium/img/img_150Kb.png',
-         'http://users.bugred.ru/tmp/default_avatar.jpg')
+         '/home/turgor/PycharmProjects/UsersTestSelenium/img/img_more_150Kb.jpg',
+         False)
     ]
 
     def __profile_page(slef, driver, email, password, img):
@@ -25,4 +25,4 @@ class TestAddAvatar:
     def test_user_add_avatar(self, driver, test_data):
         email, password, img, expected_result = test_data
         result = self.__profile_page(driver, email, password, img)
-        assert not expected_result == result, 'Ошибка добавления аватарки'
+        assert expected_result == result.split('/')[-1].isdigit(), 'Ошибка добавления аватарки'
