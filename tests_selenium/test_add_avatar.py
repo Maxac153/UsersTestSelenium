@@ -11,7 +11,7 @@ class TestAddAvatar:
 
         ('manager@mail.ru',
          '1',
-         '/home/turgor/PycharmProjects/UsersTestSelenium/img/img_8Kb.png',
+         '/home/turgor/PycharmProjects/UsersTestSelenium/img/img_150Kb.png',
          'http://users.bugred.ru/tmp/default_avatar.jpg')
     ]
 
