@@ -35,6 +35,10 @@
 
 <img src="img/TestsPythonAPI.png" width="700" height="400">
 
+## Report Selenium Allure
+
+<img src="img/SeleniumReportAllure.png" width="700" height="400">
+
 ## Report Selenium
 
 <img src="img/SeleniumReport.png" width="700" height="400">
@@ -68,4 +72,4 @@
 - [X] Добавить API python тесты
 - [X] Добавить API test list
 - [X] Добавить Reports
-- [ ] Добавить Allure отчёты
+- [X] Добавить Allure отчёты
