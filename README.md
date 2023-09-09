@@ -21,11 +21,18 @@
 - Файлы (test_api_postman) с API тестами 
 - Файлы (test_case) с тест кейсами к API тестам (Selenium)
 - Файлы (test_list) с тест листами к API тестам (Selenium)
-- Отчеты (report)
+
+## Окружение
+
+## Запуск тестов
 
 ## Selenium тесты
 
 Пример запуска Selenium тестов:
+Для запуска тестов надо ввести следующую команду:<br>
+<b>py.test --alluredir=allure_report tests_selenium</b><br>
+Для просмотра отчёта:<br>
+<b>allure serve allure_report</b>
 
 <img src="img/TestsSelenium.png" width="700" height="400">
 

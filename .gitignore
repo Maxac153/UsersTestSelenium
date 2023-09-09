@@ -1,4 +1,7 @@
 /venv
-/.idea
+/allure_report
 /tests_selenium/geckodriver.log
+/reports
+/.pytest_cache
+*.idea
 *geckodriver.log

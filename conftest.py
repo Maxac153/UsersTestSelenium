@@ -2,24 +2,15 @@ import pytest
 import allure
 
 from selenium import webdriver
-from pages.logout_page import LogoutPage
+
 from webdriver_manager.firefox import GeckoDriverManager
 
 @pytest.fixture(scope='session', autouse=True)
 def driver():
     driver = webdriver.Firefox(executable_path=GeckoDriverManager().install())
-    driver = webdriver.Firefox()
     driver.maximize_window()
     yield driver
     driver.quit()
-
-@pytest.fixture()
-def logout(driver):
-    yield
-    with allure.step('Выход из под учётной записи'):
-        from_page = LogoutPage(driver, 'http://users.bugred.ru/user/login/index.html')
-        from_page.open()
-        from_page.logout()
 
 @pytest.fixture()
 def screenshot(driver):
