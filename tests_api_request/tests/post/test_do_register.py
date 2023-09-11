@@ -25,8 +25,8 @@ class ResponseStructure(Enum):
 @allure.epic('Проверка Post метода (Do Register)')
 class TestDoRegister:
     _URL = "http://users.bugred.ru/tasks/rest/doregister"
-    _CSV_FILE_PATH_REQ = '/home/turgor/PycharmProjects/UsersTestSelenium/tests_api_request/resources/csv/data/post/do_register/request_do_register.csv'
-    _CSV_FILE_PATH_RES = '/home/turgor/PycharmProjects/UsersTestSelenium/tests_api_request/resources/csv/data/post/do_register/response_do_register.csv'
+    _CSV_FILE_PATH_REQ = 'tests_api_request/resources/csv/data/post/do_register/request_do_register.csv'
+    _CSV_FILE_PATH_RES = 'tests_api_request/resources/csv/data/post/do_register/response_do_register.csv'
 
     def check_result(self, response, extended_result):
         if extended_result[ResponseStructure.TYPE.value] == 'success':

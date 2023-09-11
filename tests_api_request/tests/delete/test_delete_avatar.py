@@ -16,8 +16,8 @@ class ResponseStructure(Enum):
 
 class TestDeleteAvatar:
     _BASE_URL = 'http://users.bugred.ru/tasks/rest/deleteavatar/?email='
-    _CSV_FILE_PATH_REQ = '/home/turgor/PycharmProjects/UsersTestSelenium/tests_api_request/resources/csv/data/delete/delete_avatar/request_delete_avatar.csv'
-    _CSV_FILE_PATH_RES = '/home/turgor/PycharmProjects/UsersTestSelenium/tests_api_request/resources/csv/data/delete/delete_avatar/response_delete_avatar.csv'
+    _CSV_FILE_PATH_REQ = 'tests_api_request/resources/csv/data/delete/delete_avatar/request_delete_avatar.csv'
+    _CSV_FILE_PATH_RES = 'tests_api_request/resources/csv/data/delete/delete_avatar/response_delete_avatar.csv'
 
     def check_result(self, response, extended_result):
         if extended_result[ResponseStructure.TYPE.value] == 'success':

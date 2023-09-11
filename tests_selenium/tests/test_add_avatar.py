@@ -1,3 +1,5 @@
+import os
+
 import allure
 import pytest
 
@@ -13,7 +15,7 @@ class TestAddAvatar:
             'Размер аватарки меньше 150Kb',
             'manager@mail.ru',
             '1',
-            '/home/turgor/PycharmProjects/UsersTestSelenium/tests_selenium/resources/img/img_8Kb.png',
+            os.path.abspath('tests_selenium/resources/img/img_8Kb.png'),
             True
 
         ),
@@ -22,7 +24,7 @@ class TestAddAvatar:
             'Размер аватарки больше 150Kb',
             'manager@mail.ru',
             '1',
-            '/home/turgor/PycharmProjects/UsersTestSelenium/tests_selenium/resources/img/img_more_150Kb.jpg',
+            os.path.abspath('tests_selenium/resources/img/img_more_150Kb.png'),
             False
         )
     ]

@@ -2,6 +2,8 @@
 /allure_report
 /tests_selenium/geckodriver.log
 /reports
+/test.py
+*__pycache__
 *.idea
 *geckodriver.log
 *.pytest_cache

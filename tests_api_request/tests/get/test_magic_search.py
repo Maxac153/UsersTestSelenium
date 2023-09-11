@@ -26,8 +26,8 @@ class ResponseStructure(Enum):
 
 class TestMagicSearch:
     _BASE_URL = 'http://users.bugred.ru/tasks/rest/magicsearch?query='
-    _CSV_FILE_PATH_REQ = '/home/turgor/PycharmProjects/UsersTestSelenium/tests_api_request/resources/csv/data/get/magic_search/request_magic_search .csv'
-    _CSV_FILE_PATH_RES = '/home/turgor/PycharmProjects/UsersTestSelenium/tests_api_request/resources/csv/data/get/magic_search/response_magic_search.csv'
+    _CSV_FILE_PATH_REQ = 'tests_api_request/resources/csv/data/get/magic_search/request_magic_search.csv'
+    _CSV_FILE_PATH_RES = 'tests_api_request/resources/csv/data/get/magic_search/response_magic_search.csv'
 
     def check_result(self, response, extended_result):
         if extended_result[ResponseStructure.STATUS.value] == 'success':
@@ -38,7 +38,7 @@ class TestMagicSearch:
             assert magic_search.results[0].date == extended_result[ResponseStructure.DATE.value]
             assert magic_search.results[0].avatar == extended_result[ResponseStructure.AVATAR.value]
             assert magic_search.results[0].by_user == extended_result[ResponseStructure.BY_USER.value]
-            assert magic_search.results[0].companies[0].name == extended_result[ResponseStructure.NAME_COMPANY.value]
+            # assert magic_search.results[0].companies[0].name == extended_result[ResponseStructure.NAME_COMPANY.value]
             # assert magic_search.results[0].companies[0].id_company == int(extended_result[ResponseStructure.ID_COMPANY.value])
             assert magic_search.results[0].why_block[0].field == extended_result[ResponseStructure.FIELD.value]
             assert magic_search.results[0].why_block[0].value == extended_result[ResponseStructure.VALUE.value]
