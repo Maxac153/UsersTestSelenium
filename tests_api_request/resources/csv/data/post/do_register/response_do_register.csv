@@ -1,0 +1,7 @@
+﻿status_code,type,message,name,avatar,birthday,email,gender,date_start,hobby
+200,error,поле фио является обязательным,-,-,-,-,-,-,-
+200,error, Некоректный  email ,-,-,-,-,-,-,-
+200,error, Некоректный  email verygoodmail.ru,-,-,-,-,-,-,-
+200,error, Некоректный  email verygood@mailru,-,-,-,-,-,-,-
+200,error,поле пароль является обязательным,-,-,-,-,-,-,-
+200,success,-,Tur123,http://users.bugred.ru//tmp/default_avatar.jpg,0,verygood@mail.ru,,0,

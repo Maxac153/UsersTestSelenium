@@ -1,0 +1,7 @@
+﻿test_name,email,name,password
+поле фио является обязательным,verygood@mail.ru,,123
+ Некоректный  email ,,Tur123,123
+ Некоректный  email verygoodmail.ru,verygoodmail.ru,Tur123,123
+ Некоректный  email verygood@mailru,verygood@mailru,Tur123,123
+поле пароль является обязательным,verygood@mail.ru,Tur123,
+Корректныйе данные,verygood@mail.ru,Tur123,123

@@ -1,0 +1,3 @@
+﻿test_name,status,foundCount,name,email,date,avatar,by_user,name,id_company,field,value,type
+Поиск существующего пользователя,success,1,Tur123,verygood@mail.ru,2023-09-11,/tmp/default_avatar.jpg,rest,KJSkdfjlsdjf,-,name,Tur123,user
+Поиск несуществующего пользователя,not found,0,-,-,-,-,-,-,-,-,-,-
