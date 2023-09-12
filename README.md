@@ -52,13 +52,9 @@
 
 ## Selenium тесты
 
-Пример запуска Selenium тестов:
-
 <img src="img/TestsSelenium.png" width="700" height="150">
 
 ## Python API тесты
-
-Пример запуска API тестов:
 
 <img src="img/TestsPythonAPI.png" width="700" height="150">
 
@@ -70,7 +66,7 @@
 
 <img src="img/ApiReportAllure.png" width="700" height="400">
 
-## Postman
+## Postman API
 
 Пример запуска тестов в Postman:
 
