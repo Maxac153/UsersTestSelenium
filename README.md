@@ -68,18 +68,16 @@
 
 ## Postman API
 
-Пример запуска тестов в Postman:
-
-<img src="img/TestsPostmanAPI.png" width="700" height="150">
+<img src="img/TestsPostmanAPI.png" width="900" height="400">
 
 ## Report Postman
 
-<img src="img/PostmanReport.png" width="700" height="400">
+<img src="img/PostmanReport.png" width="700" height="450">
 
 ## Test Case
 
-<img src="img/TestsCaseUsersAPI.png" width="700" height="400">
+<img src="img/TestsCaseUsersAPI.png" width="700" height="450">
 
-## Test List
+## Checklist
 
 <img src="img/ChecklistUsersAPI.png" width="700" height="450">
